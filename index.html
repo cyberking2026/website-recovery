@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SecureRecover</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+    }
+
+    header {
+      padding: 25px;
+      text-align: center;
+      background: #1e293b;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    button {
+      background: #22c55e;
+      color: white;
+      border: none;
+      padding: 13px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .status {
+      margin: 15px 0;
+      font-size: 20px;
+    }
+
+    li {
+      margin: 12px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>🛡️ SecureRecover</h1>
+  <p>Website Security & Recovery Center</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>🔎 Security Check</h2>
+
+    <div id="status" class="status">
+      ⚪ Not Scanned
+    </div>
+
+    <button onclick="runCheck()">
+      Run Security Check
+    </button>
+  </div>
+
+  <div class="card">
+    <h2>🚨 Recovery Checklist</h2>
+
+    <ul>
+      <li>☐ Create a clean backup</li>
+      <li>☐ Change administrator passwords</li>
+      <li>☐ Enable 2FA</li>
+      <li>☐ Review administrator accounts</li>
+      <li>☐ Update software and plugins</li>
+      <li>☐ Review security logs</li>
+      <li>☐ Restore a known-clean backup</li>
+      <li>☐ Verify the website after recovery</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>📋 Recovery Report</h2>
+
+    <pre id="report">
+No report generated yet.
+    </pre>
+  </div>
+
+</div>
+
+<script>
+
+function runCheck() {
+
+  const status = document.getElementById("status");
+  const report = document.getElementById("report");
+
+  status.innerHTML = "🔎 Checking...";
+
+  setTimeout(function() {
+
+    status.innerHTML = "⚠️ Manual Review Required";
+
+    report.textContent =
+`SECURITY RECOVERY REPORT
+
+✓ Backup:
+Create a known-clean backup.
+
+✓ Credentials:
+Change administrator passwords
+and enable 2FA.
+
+✓ Accounts:
+Review unknown administrator accounts.
+
+✓ Software:
+Update CMS, plugins and dependencies.
+
+✓ Logs:
+Review server/application logs.
+
+✓ Recovery:
+Restore from a verified clean backup
+when appropriate.
+
+✓ Verification:
+Re-scan and monitor the website.
+
+NOTE:
+This first version provides recovery
+guidance. It does not directly access
+or modify another website's server.`;
+
+  }, 1500);
+}
+
+</script>
+
+</body>
+</html>
